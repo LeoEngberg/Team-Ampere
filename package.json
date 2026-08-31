@@ -9,11 +9,11 @@
     "api": "node mock-api/server.js",
     "test": "vitest",
     "e2e:pw": "playwright test"
-    
   },
   "dependencies": {
     "chart.js": "^4.4.7",
     "express": "^4.21.2",
+    "jsdom": "^30.0.1",
     "lodash": "^4.17.21",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",
@@ -23,6 +23,7 @@
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.62.1",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.5.0",
     "cypress": "^15.21.1",
     "eslint": "^10.9.1",
     "eslint-config-prettier": "^10.1.8",
