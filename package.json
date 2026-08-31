@@ -7,8 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "api": "node mock-api/server.js",
-    "e2e:pw": "playwright test"
-    
+    "e2e:pw": "playwright test",
+    "test": "vitest"
   },
   "dependencies": {
     "chart.js": "^4.4.7",
@@ -29,6 +29,7 @@
     "globals": "^17.11.0",
     "prettier": "^3.9.6",
     "start-server-and-test": "^3.0.12",
-    "vite": "^6.0.7"
+    "vite": "^6.0.7",
+    "vitest": "^4.1.11"
   }
 }
