@@ -7,8 +7,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "api": "node mock-api/server.js",
-    "e2e:pw": "playwright test",
-    "test": "vitest"
+    "test": "vitest",
+    "e2e:pw": "playwright test"
+    
   },
   "dependencies": {
     "chart.js": "^4.4.7",
@@ -27,6 +28,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.10.0",
     "globals": "^17.11.0",
+    "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
     "start-server-and-test": "^3.0.12",
     "vite": "^6.0.7",

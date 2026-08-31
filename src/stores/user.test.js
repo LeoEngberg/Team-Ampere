@@ -20,5 +20,16 @@ describe('User Store', () => {
 
         expect(userStore.user).toEqual(userData);
     });
+
+    it('should update user data correctly after save', async () => {
+        const updatedData = { id: 1, name: 'Jane Doe', email: 'jane@example.com' };
+        vi.spyOn(api, 'saveUser').mockResolvedValue(updatedData);
+        vi.spyOn(window, 'alert').mockImplementation(() => {}); // prevent the real alert() popup during the test
+
+        const userStore = useUserStore();
+        await userStore.save(updatedData);
+
+        expect(userStore.user).toEqual(updatedData);
+    });
+
 });
-  
