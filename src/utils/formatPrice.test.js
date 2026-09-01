@@ -3,7 +3,7 @@ import { formatPrice } from './formatPrice'
 
 describe('formatPrice', () => {
   it('formats price in Swedish format', () => {
-   expect(formatPrice(1345)).toBe('1\u00A0345 kr')
+    expect(formatPrice(1345)).toBe('1\u00A0345 kr')
   })
 
   it('formats smaller prices correctly', () => {

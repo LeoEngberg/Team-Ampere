@@ -4,14 +4,23 @@
     <div class="card">
       <table>
         <tr>
-          <th>Faktura</th><th>Period</th><th>Belopp</th><th>Förfaller</th><th>Status</th><th></th>
+          <th>Faktura</th>
+          <th>Period</th>
+          <th>Belopp</th>
+          <th>Förfaller</th>
+          <th>Status</th>
+          <th></th>
         </tr>
         <tr v-for="invoice in invoices" :key="invoice.id">
           <td>{{ invoice.id }}</td>
           <td>{{ invoice.period }}</td>
           <td>{{ invoice.amount }} kr</td>
           <td>{{ invoice.due }}</td>
-          <td><span :class="['status-chip', statusChipClass(invoice.status)]">{{ invoice.status }}</span></td>
+          <td>
+            <span :class="['status-chip', statusChipClass(invoice.status)]">{{
+              invoice.status
+            }}</span>
+          </td>
           <td><div class="download" @click="downloadInvoice(invoice)">Ladda ner</div></td>
         </tr>
       </table>
@@ -38,5 +47,9 @@ const downloadInvoice = (invoice) => {
 </script>
 
 <style scoped>
-.download { color: #2f54eb; cursor: pointer; font-size: 14px; }
+.download {
+  color: #2f54eb;
+  cursor: pointer;
+  font-size: 14px;
+}
 </style>

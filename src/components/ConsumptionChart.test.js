@@ -9,7 +9,7 @@ const ChartMock = vi.hoisted(() => {
 })
 
 vi.mock('chart.js/auto', () => ({
-  default: ChartMock
+  default: ChartMock,
 }))
 
 describe('ConsumptionChart', () => {
@@ -17,24 +17,16 @@ describe('ConsumptionChart', () => {
     mount(ConsumptionChart, {
       props: {
         months: ['Jan', 'Feb', 'Mar'],
-        values: [100, 200, 300]
-      }
+        values: [100, 200, 300],
+      },
     })
 
     expect(ChartMock).toHaveBeenCalled()
 
     const config = ChartMock.mock.calls[0][1]
 
-    expect(config.data.labels).toEqual([
-      'Jan',
-      'Feb',
-      'Mar'
-    ])
+    expect(config.data.labels).toEqual(['Jan', 'Feb', 'Mar'])
 
-    expect(config.data.datasets[0].data).toEqual([
-      100,
-      200,
-      300
-    ])
+    expect(config.data.datasets[0].data).toEqual([100, 200, 300])
   })
 })

@@ -8,8 +8,8 @@ Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
     npm start
 
 TODO: write proper documentation
-# kraftly-mina-sidor
 
+# kraftly-mina-sidor
 
 # Arbetsavtal
 
@@ -41,20 +41,19 @@ Tisdag – på plats kl. 10:00
 Fredag – på distans kl. 09:30
 Vi lägger till fler mötestider vid behov.
 
-
-## Definition of done för PR:er 
+## Definition of done för PR:er
 
 Vad ändrades?
 Varför?
 Hur testar man?
 Checklista
-  Jag har kört appen och sett att buggen är borta
-  Commit-meddelandet följer conventional commits
-  Grenen utgår från färskt
-  Ticketets "Klar när" -punkter är avbockade 
+Jag har kört appen och sett att buggen är borta
+Commit-meddelandet följer conventional commits
+Grenen utgår från färskt
+Ticketets "Klar när" -punkter är avbockade
 
-  ## Tech lead-schema för rotationen
+## Tech lead-schema för rotationen
 
-  Leo vecka 1-3
-  Rabbiya vecka 4-6
-  Jia vecka 7-9
+Leo vecka 1-3
+Rabbiya vecka 4-6
+Jia vecka 7-9
