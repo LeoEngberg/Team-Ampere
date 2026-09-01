@@ -1,14 +1,13 @@
 import { describe, it, expect, vi } from 'vitest'
 import { fetchInvoices, submitMove } from './api'
 
-
 describe('fetchInvoices', () => {
   it('returns invoices from API', async () => {
     const invoices = [
       {
         id: 'F-2026-01',
-        status: 'Betald'
-      }
+        status: 'Betald',
+      },
     ]
 
     vi.stubGlobal(
@@ -16,7 +15,7 @@ describe('fetchInvoices', () => {
       vi.fn(() =>
         Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(invoices)
+          json: () => Promise.resolve(invoices),
         })
       )
     )
@@ -30,7 +29,7 @@ describe('fetchInvoices', () => {
 describe('submitMove', () => {
   it('returns the response from API', async () => {
     const response = {
-      reference: 'REF-123'
+      reference: 'REF-123',
     }
 
     vi.stubGlobal(
@@ -38,7 +37,7 @@ describe('submitMove', () => {
       vi.fn(() =>
         Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(response)
+          json: () => Promise.resolve(response),
         })
       )
     )
@@ -48,7 +47,7 @@ describe('submitMove', () => {
       zip: '80267',
       city: 'Gävle',
       date: '2026-10-01',
-      contract: 'Rörligt pris'
+      contract: 'Rörligt pris',
     }
 
     const result = await submitMove(data)
@@ -62,7 +61,7 @@ describe('submitMove', () => {
       zip: '80267',
       city: 'Gävle',
       date: '2026-10-01',
-      contract: 'Rörligt pris'
+      contract: 'Rörligt pris',
     }
 
     vi.stubGlobal(
@@ -70,7 +69,7 @@ describe('submitMove', () => {
       vi.fn(() =>
         Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ reference: 'ABC123' })
+          json: () => Promise.resolve({ reference: 'ABC123' }),
         })
       )
     )
@@ -81,7 +80,7 @@ describe('submitMove', () => {
       'http://localhost:4000/api/move',
       expect.objectContaining({
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       })
     )
   })
