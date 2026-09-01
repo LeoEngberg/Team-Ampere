@@ -116,14 +116,20 @@ Inga hinder idag.
 
 **Vad har jag gjort idag?**
 
-Idag skrev jag en funktion och ett test för validateMove (validering av flyttanmälningsformuläret), samt en funktion och ett test för firstName (som extraherar förnamnet till hälsningen på dashboarden). Jag har också skrivit en regression test.
+Idag skrev jag en funktion och ett test för validateMove (validering av flyttanmälningsformuläret), samt en funktion och ett test för firstName (som extraherar förnamnet till hälsningen på dashboarden). Skrev en regression test. Skrev funnktionen ValidateEmail.js , skrev ett test för den.. och skrev test för ProfileView.
 
 **Vad var svårt?**
 
-Det svåraste idag var att skriva testet för validateMove. Formuläret har flera fält som ska valideras samtidigt (adress, postnummer, ort, datum, avtal), vilket gjorde det svårare att strukturera testerna jämfört med enklare funktioner som firstName.
+Det svåraste idag var att skriva regression test och testet för validateMove. Formuläret har flera fält som ska valideras samtidigt (adress, postnummer, ort, datum, avtal), vilket gjorde det svårare att strukturera testerna jämfört med enklare funktioner som firstName.
 Att förstå hur funkar ES-Lint var också lite svårt.
-Jag var lite förvirrad att vad är regression test.
+Att skriva en regression test var lite komplicerad och tog lite tid att förstå.
 
 **Vilka hinder har jag?**
 
 Inga hinder idag.
+
+### Reflektion
+
+Det vi är mest nöjda med är regressionstestet, eftersom användaren tidigare kunde skriva vad som helst i e-postfältet, till exempel sitt namn istället för en e-postadress, och det sparades ändå eftersom det inte fanns någon validering. Det var dokumenterat som en känd bugg i docs/debt.md.
+
+Vi ska också visa vårt E2E-test för inloggningsflödet.
