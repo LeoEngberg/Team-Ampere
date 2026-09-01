@@ -1,4 +1,4 @@
-## 2026-08-28 · Boiler Room 1
+# 2026-08-28 · Boiler Room 1
 
 ### Jia
 
@@ -40,42 +40,90 @@
 
 ### Jia
 
-### Vad har jag gjort idag?
+**Vad har jag gjort idag?**
 
 Idag har jag gjort klart enhetstester för StatusChip och API-klienten. Det gick bra och båda testerna blev godkända.
 
-### Vad var svårt?
+**Vad var svårt?**
 
 I början var jag förvirrad över skillnaden mellan komponenttester och enhetstester. Efter att ha gjort research och fått hjälp av AI förstår jag nu att enhetstester handlar om att testa en enskild funktion, medan komponenttester handlar om att testa en UI-komponents beteende och hur den fungerar i sitt sammanhang.
 
-### Vilka hinder har jag?
+**Vilka hinder har jag?**
 
 Inga hinder idag.
 
 ### Leo
 
-### Vad har jag gjort idag?
+**Vad har jag gjort idag?**
 
 Idag har jag gjort komponentstest och E2E-test
 
-**Kvar till M1-taggen tisdag:** FIxa husky och lint-stage
+**Kvar till M1-taggen tisdag:**
 
-### Vad var svårt?
+FIxa husky och lint-stage
+
+**Vad var svårt?**
 
 Fick ett par konflikter efter att jag skulle committa och merga mina tester men det löste sig.
 
-### Vilka hinder har jag?
+**Vilka hinder har jag?**
 
 Inga hinder idag.
 
 ### Rabbiya
 
-### Vad har jag gjort idag?
+**Vad har jag gjort idag?**
 
 Föregående arbetsdag skrev jag testet för endast **load()**-funktionen för användardata i user.js. Idag utökade jag user.test.js med tester för **save()** funktionen, samt en test som hanterar **alert()**-anropet. Därefter skrev jag ett E2E-test för navigering mellan olika sidor i appen.
 
-### Vad var svårt?
+**Vad var svårt?**
 
 När jag skrev testet för **save()** fick jag ett misslyckat test, och jag var till en början osäker på hur jag skulle testa **alert()**-anropet och varför det behövdes. Med hjälp av AI förstod jag att window.alert behöver mockas i testet, annars stör den riktiga webbläsarpopupen testkörningen — och att detta fortfarande räknas som ett enhetstest eftersom **alert()** bara är ett vanligt JavaScript-API, inte en Vue-komponent.
 
 Att skriva E2E-testet var enklare, eftersom jag kunde navigera igenom hela flödet och se det visuellt i Playwrights UI. Det gjorde det lättare att upptäcka problem i testet och åtgärda dem direkt.
+
+# 2026-09-01
+
+### Jia
+
+**Vad har jag gjort idag?**
+
+Idag har jag gjort klart enhetstester för fakturastatus och prisformatering. Alla tester blev godkända.
+
+**Vad var svårt?**
+
+Det känns fortfarande svårt för mig att göra tester, men jag kan göra mer övning för att bli bättre på det. En annan sak som var lite svår var att förstå hur ESLint och pre-commit fungerar tillsammans och vad som behöver göras av hela teamet.
+
+**Vilka hinder har jag?**
+
+Inga hinder idag.
+
+### Leo
+
+**Vad har jag gjort idag?**
+
+Installerade ES-lint, prettier och husky med pre-commits i repot.
+
+**Vad var svårt?**
+
+Mycket att göra, inte svårt i sig men lite information overload.
+
+**Vilka hinder har jag?**
+
+Inga hinder idag.
+
+### Rabbiya
+
+**Vad har jag gjort idag?**
+
+Idag skrev jag en funktion och ett test för validateMove (validering av flyttanmälningsformuläret), samt en funktion och ett test för firstName (som extraherar förnamnet till hälsningen på dashboarden). Jag har också skrivit en regression test.
+
+**Vad var svårt?**
+
+Det svåraste idag var att skriva testet för validateMove. Formuläret har flera fält som ska valideras samtidigt (adress, postnummer, ort, datum, avtal), vilket gjorde det svårare att strukturera testerna jämfört med enklare funktioner som firstName.
+Att förstå hur funkar ES-Lint var också lite svårt.
+Jag var lite förvirrad att vad är regression test.
+
+**Vilka hinder har jag?**
+
+Inga hinder idag.
