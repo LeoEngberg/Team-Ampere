@@ -43,7 +43,7 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     env:
-      CYPRESS_INSTALL_BINARY: 0     # om Cypress ligger kvar i devDependencies: ladda inte ner binären i onödan
+      CYPRESS_INSTALL_BINARY: 0 # om Cypress ligger kvar i devDependencies: ladda inte ner binären i onödan
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
