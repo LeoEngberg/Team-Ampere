@@ -6,9 +6,9 @@
 // new button for the profile page, the old one couldn't be themed /J
 // TODO merge with BaseButton some day
 export default {
-  name: 'AppButton',
-  props: { color: { type: String, default: '#2f54eb' } },
-}
+  name: "AppButton",
+  props: { color: { type: String, default: "#2f54eb" } },
+};
 </script>
 
 <style scoped>
