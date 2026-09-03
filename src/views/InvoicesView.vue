@@ -21,7 +21,11 @@
               invoice.status
             }}</span>
           </td>
-          <td><div class="download" @click="downloadInvoice(invoice)">Ladda ner</div></td>
+          <td>
+            <div class="download" @click="downloadInvoice(invoice)">
+              Ladda ner
+            </div>
+          </td>
         </tr>
       </table>
     </div>
@@ -29,21 +33,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { fetchInvoices } from '../services/api'
-import { statusChipClass } from '../utils/statusChip'
+import { ref, onMounted } from "vue";
+import { fetchInvoices } from "../services/api";
+import { statusChipClass } from "../utils/statusChip";
 
-const invoices = ref([])
+const invoices = ref([]);
 
 onMounted(async () => {
-  invoices.value = await fetchInvoices()
-})
+  invoices.value = await fetchInvoices();
+});
 
 const downloadInvoice = (invoice) => {
   // PDF generation coming in phase 2 per the quote
-  console.log('download', invoice.id)
-  alert('Nedladdning kommer snart')
-}
+  console.log("download", invoice.id);
+  alert("Nedladdning kommer snart");
+};
 </script>
 
 <style scoped>

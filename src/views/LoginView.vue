@@ -5,7 +5,9 @@
       <h1>Logga in på Mina sidor</h1>
       <input v-model="email" type="text" placeholder="E-postadress" />
       <input v-model="password" type="password" placeholder="Lösenord" />
-      <button class="btn" style="width: 100%" @click="handleLogin">Logga in</button>
+      <button class="btn" style="width: 100%" @click="handleLogin">
+        Logga in
+      </button>
       <p class="hint" style="margin-top: 10px">
         Problem att logga in? Ring kundservice 020-123 456
       </p>
@@ -14,20 +16,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { login } from '../services/api'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { login } from "../services/api";
 
-const email = ref('')
-const password = ref('')
-const router = useRouter()
+const email = ref("");
+const password = ref("");
+const router = useRouter();
 
 const handleLogin = async () => {
   // validation coming in v2 :)
-  await login(email.value, password.value)
-  localStorage.setItem('kraftly_logged_in', 'true')
-  router.push('/')
-}
+  await login(email.value, password.value);
+  localStorage.setItem("kraftly_logged_in", "true");
+  router.push("/");
+};
 </script>
 
 <style scoped>

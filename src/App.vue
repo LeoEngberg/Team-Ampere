@@ -19,14 +19,14 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
 
 const logout = () => {
-  localStorage.removeItem('kraftly_logged_in')
-  router.push('/login')
-}
+  localStorage.removeItem("kraftly_logged_in");
+  router.push("/login");
+};
 </script>
 
 <style>
