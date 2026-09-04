@@ -133,3 +133,23 @@ Inga hinder idag.
 Det vi är mest nöjda med är regressionstestet, eftersom användaren tidigare kunde skriva vad som helst i e-postfältet, till exempel sitt namn istället för en e-postadress, och det sparades ändå eftersom det inte fanns någon validering. Det var dokumenterat som en känd bugg i docs/debt.md.
 
 Vi ska också visa vårt E2E-test för inloggningsflödet.
+
+# 2026-09-03
+
+### Jia & Rabbiya
+
+**Vad har jag gjort idag?**
+
+Idag har jag arbetat med CI och GitHub Actions. Jag har testat workflowet efter att vi lade till build-jobbet och upptäckte och fixade problem med Prettier-formatet i ci.yml. Efter att vi pushade ändringarna körde CI igen och build-jobbet blev godkänt. Jag har också börjat arbeta med E2E-jobbet och förstått hur Playwright kan köras som ett eget jobb i CI.
+
+**Vad var svårt?**
+
+Det var lite svårt att förstå varför GitHub Actions först visade att processen hade avbrutits. Jag behövde gå igenom loggarna för att förstå skillnaden mellan ett riktigt fel och att ett workflow har blivit cancelled. Det var också lite svårt att förstå hur E2E-jobbet ska kopplas till quality och build, och om det ska köras parallellt eller med needs:.
+
+**Vilka hinder har jag?**
+
+Inga större hinder idag. Jag behöver fortfarande öva mer på CI, GitHub Actions och E2E-tester för att känna mig mer säker på hur allt hänger ihop.
+
+### Leo
+
+Sjukledighet
