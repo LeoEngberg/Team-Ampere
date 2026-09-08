@@ -27,6 +27,9 @@ Build, Quality, e2e. 1 approval, up to date ja, ingen bypass för någon.
 ## Beslut 3 · Protokoll vid röd main
 
 Vem gör vad, inom vilken tid. Laga framåt eller revert – var går gränsen? (Aldrig runt.)
+Tech lead
+Inom 1 timme mellan kl 9 till kl 15.
+Vid större fel - Revert , Vid mindre fel - Laga
 
 ## Byggtid: före och efter npm-cache
 
@@ -45,3 +48,5 @@ Med cache: ![alt text](image-2.png)
 ![alt text](image-4.png)
 
 ## Skärmdump: låst merge-knapp
+
+![alt text](image-5.png)
