@@ -153,3 +153,39 @@ Inga större hinder idag. Jag behöver fortfarande öva mer på CI, GitHub Actio
 ### Leo
 
 Sjukledighet
+
+# 2026-09-04 Fredag
+
+### Jia, Rabbiya, Leo
+
+**vad gjorde vi?**
+
+Vi skapade en ny branch och lägg till extra rad i ci.yml filen och lagd CI-badge överst i README som visar passing . Sen vi skapade en pull request. Den var röd för att det var några formatting fel, extra rad i yaml filen. Vi fixade den och sen var PR grön. vi tog skärmdump av den merge knapp som var låst.
+
+**vad var svårt?**
+
+Vi försökte att testa fel i pipeline genom att skriva några syntaxfel men de fixade sig själv när vi sparade ändringar.
+
+**PR Röd**
+
+**rad:** github/workflow/ci.yml rad: 62, 63
+
+**Fel:** Det var en formatting fel. Några extra tom rad.
+
+# 2026-09-07 Månadag
+
+## New Tech Lead: Rabbiya
+
+vecka 1-3: **Leo**
+
+vecka 3-9: **Rabbiya**
+
+1. Vi gjorde minst 15 tester (enhets, komponent och e2e tester) och vi har valt Playwright som e2e verktyg.
+
+2. Vi har skapat en pipeline där det finns 3 jobb:
+
+   1. Quality
+   2. Build
+   3. E2E - (Alla ska köra parallelt.)
+
+3. Vi har även diskuterat om protokoll om main ska vara rött. Tech Lead ska ansvaras för kolla att main är grön efter merge inom 30 minuter. Om Tech Lead är inte tillgängligt då den person som ska merga vara ansvar för den.

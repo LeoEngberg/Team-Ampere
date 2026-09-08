@@ -1,3 +1,7 @@
+## CI-badgen
+
+[![CI](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml/badge.svg)](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml)
+
 # kraftly-portal
 
 Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
@@ -57,7 +61,3 @@ Ticketets "Klar när" -punkter är avbockade
 Leo vecka 1-3
 Rabbiya vecka 4-6
 Jia vecka 7-9
-
-## CI-badgen
-
-[![CI](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml/badge.svg)](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml)
