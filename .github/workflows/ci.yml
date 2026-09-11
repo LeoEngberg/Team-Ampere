@@ -40,6 +40,16 @@ jobs:
           name: dist
           path: dist
           retention-days: 7
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t team-ampere-frontend:ci .
+
+      - name: Show image size
+        run: docker image ls team-ampere-frontend:ci
   e2e:
     runs-on: ubuntu-latest
     env:
