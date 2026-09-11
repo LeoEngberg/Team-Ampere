@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  api:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./mock-api:/app
+    command: node server.js
