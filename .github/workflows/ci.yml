@@ -68,3 +68,9 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t kraftly .
+      - run: docker image ls kraftly --format "{{.Size}}"
