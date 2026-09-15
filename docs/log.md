@@ -189,3 +189,58 @@ vecka 3-9: **Rabbiya**
    3. E2E - (Alla ska köra parallelt.)
 
 3. Vi har även diskuterat om protokoll om main ska vara rött. Tech Lead ska ansvaras för kolla att main är grön efter merge inom 30 minuter. Om Tech Lead är inte tillgängligt då den person som ska merga vara ansvar för den.
+
+# 2026-09-11 Fredag
+
+### Jia
+
+**Vad har jag gjort idag?**
+
+Idag har jag fortsatt att arbeta med Docker och containers. Jag fixade problemet med Docker Compose och Nginx så att frontend kan startas med docker compose up --build och öppnas på localhost:8080.
+
+Jag testade Docker images och jämförde en naiv build med en multi-stage-build. Den naiva imagen var 1,52 GB och multi-stage-imagen var 43,7 MB. Jag dokumenterade resultaten i docs/containers.md.
+
+Jag skrev dokumentation om hur man kör projektet, hur mock-API:t fungerar, hur webbläsaren når API:t, vad som körs i CI och vilka begränsningar som finns. Jag förberedde även ett PR för ändringarna.
+
+**Vad var svårt?**
+
+Det som var svårt idag var att förstå varför frontend-containern inte startade. Nginx kunde inte hitta api som upstream. Efter att jag startade om Docker Compose kunde frontend startas korrekt.
+
+### Rabbiya
+
+**Vad har jag gjort idag?**
+
+Implementerade en multi-stage Dockerfile med Node för build-steget och nginx som serveringssteg.
+Lade till .dockerignore.
+Konfigurerade nginx.conf med SPA-fallback så att exempelvis /fakturor fungerar även vid omladdning och inte ger 404.
+Kontrollerade Docker-imagens storlek med docker image ls och verifierade att den är under 100 MB.
+Jag kunde inte ta skärmdumpen av docker image ls till docs/containers.md, så detta behöver kompletteras.
+
+**vad var svårt**
+Det var svårt att förstå hur docker funkar, tog lite tid att förstå hur man starta docker.
+
+### Leo
+
+**Vad har jag gjort idag?**
+
+Läste på mer om docker och fick en liten genomgång av mina kollegor/klasskamrater.
+
+# 2026-09-15
+
+### Jia, Leo, Rabbiya
+
+Vi hade en teamdiskussion om våra tre beslut för Docker-uppsättningen. Under diskussionen ändrade vi Beslut 2.
+
+Tidigare: api-servicen använde image: node:22-alpine direkt i Compose-filen och monterade in ./mock-api-mappen som en bind mount i containern.
+
+Nu: vi bestämde att mock-API:t ska ha sitt eget Dockerfile istället för bind mount. Koden byggs nu in i en egen image via build: ./mock-api, så imagen blir självständig och innehåller allt den behöver för att köras – oavsett vilken maskin man startar den på.
+
+### Leo
+
+**Vad jag har gjort idag?**
+
+Jag skapade en temporär mapp där jag klonade repot för att testa docker compose up --build och allting gick som det skulle.
+
+**Vad var svårt?**
+
+Ingenting egentligen, allt flöt på som det skulle.
