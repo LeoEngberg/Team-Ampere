@@ -8,8 +8,15 @@ Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
 
 ## Getting started
 
-    npm install
-    npm start
+Hur du kommer igång med docker:
+
+docker compose up --build
+
+och hur du kommer igång utan:
+
+npm install
+npm run api
+npm run dev
 
 TODO: write proper documentation
 
