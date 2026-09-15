@@ -59,11 +59,14 @@ Vi valde Alpine-baserade images eftersom de är relativt små. Vi använder ocks
 
 Mock-API:t körs som en separat service i Docker Compose.
 
-Servicen använder node:22-alpine och startas med:
+`api`-servicen har ett eget Dockerfile i `mock-api/` som bakas in i en egen image vid `docker compose build`. Ingen volym längre.
 
-node server.js
+**Varför bytte vi:**
 
-Den lokala mappen mock-api monteras in i containern och API:t körs på port 4000 i Docker-nätverket.
+- Imagen blir självständig och reproducerbar – den innehåller allt den behöver för att köras, oavsett vem som startar den eller vilken kod som råkar ligga i mappen lokalt.
+- Vi slipper vara beroende av att `mock-api`-mappen finns och ser likadan ut på alla maskiner.
+
+**Nackdel vi accepterade:** ingen live-reload längre – ändrar vi kod i `mock-api/` måste vi köra `docker compose up --build` för att se ändringen, istället för att den syns direkt som med bind-mount.
 
 ### 3. Hur webbläsaren når API:t
 
@@ -96,13 +99,13 @@ Docker-builden körs som ett eget CI-jobb.
 Docker-imagen byggs med:
 
 ```bash
-docker build -t team-ampere-frontend:ci .
+docker build -t kraftly .
 ```
 
 Image-storleken visas sedan i CI-loggen med:
 
 ```bash
-docker image ls team-ampere-frontend:ci
+docker run: docker image ls kraftly --format "{{.Size}}"
 ```
 
 På detta sätt kan vi kontrollera att Docker-imagen byggs korrekt och se dess storlek i CI.
@@ -112,5 +115,4 @@ Mock-API:t är endast avsett för utveckling och testning.
 Mock-API:t är inte ett produktions-API.
 Docker Compose-konfigurationen är främst avsedd för lokal utveckling och CI.
 Frontend-imagen använder Nginx för att servera statiska, färdigbyggda filer.
-Node.js och byggmiljön finns inte i den slutliga multi-stage-imagen.
 Mock-API:t använder ingen riktig produktionsdatabas eller persistent produktionsdata.
