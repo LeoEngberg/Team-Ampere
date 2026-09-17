@@ -66,6 +66,9 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+          env:
+          E2E_SERVER: preview
+          API_KEY: e2e-testnyckel # ingen hemlighet – ett API som lever två minuter på en slit-och-släng-maskin
   image:
     runs-on: ubuntu-latest
     steps:

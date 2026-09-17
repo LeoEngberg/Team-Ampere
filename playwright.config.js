@@ -6,7 +6,7 @@ export default defineConfig({
   webServer: [
     {
       command: "npm run api",
-      url: "http://localhost:4000/api/user",
+      url: "http://localhost:4000/healthz",
       reuseExistingServer: true,
     },
     {
