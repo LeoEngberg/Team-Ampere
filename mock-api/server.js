@@ -157,6 +157,10 @@ app.put("/api/user", (req, res) => {
   res.json(user);
 });
 
+app.get("/healthz", (req, res) => {
+  res.sendStatus(200);
+});
+
 const port = process.env.PORT || 4000;
 app.listen(port, () =>
   console.log(`Mock API on port ${port} – ${keys.size} nyckel/nycklar laddade`),
