@@ -10,5 +10,4 @@ services:
     build:
       context: ./mock-api
       dockerfile: Dockerfile
-    ports:
-      - "4000:4000" # browsern anropar localhost:4000 – därför måste porten publiceras
+    
