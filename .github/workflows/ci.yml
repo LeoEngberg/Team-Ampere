@@ -61,6 +61,9 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e:pw
+        env:
+          E2E_SERVER: preview
+          API_KEY: e2e-testnyckel # ingen hemlighet – ett API som lever två minuter på en slit-och-släng-maskin
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
