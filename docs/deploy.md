@@ -67,12 +67,6 @@ Den nya nyckeln finns bara på två ställen: i varje utvecklares egen
 Environment på **web**-tjänsten. Den skickas aldrig till klienten – nginx
 lägger på den på servern, se `nginx.conf.template`.
 
-**Skrev vi om git-historiken?**
-
-- Om **nej**: eftersom nyckeln redan är avstängd hos IT-avdelningen (bevisat
-  ovan) och repot inte är publikt utanför kursen, bedömde vi att en
-  historik-omskrivning inte var värt risken/jobbet just nu.
-
 ## Rollback
 
 **Sätt 1 – Redeploy en tidigare version i Render**
@@ -103,12 +97,12 @@ lägger på den på servern, se `nginx.conf.template`.
 
 ## Tider (uppmätta)
 
-| Steg                                                | Tid                                             |
-| --------------------------------------------------- | ----------------------------------------------- |
-| Merge till `main` → `publish`-jobbet klart          | `[FYLL I]`                                      |
-| Deploy hook anropas → `/version.txt` visar rätt sha | `[FYLL I]`                                      |
-| Total tid, merge → staging klart och verifierat     | `[FYLL I]`                                      |
-| Kallstart (första anropet efter viloläge)           | `[FYLL I – bör ligga i häradet 30–60 sekunder]` |
+| Steg                                                | Tid       |
+| --------------------------------------------------- | --------- |
+| Merge till `main` → `publish`-jobbet klart          | `[1m49s]` |
+| Deploy hook anropas → `/version.txt` visar rätt sha | `[10.5s]` |
+| Total tid, merge → staging klart och verifierat     | `[2m29s]` |
+| Kallstart (första anropet efter viloläge)           | `[10.0s]` |
 
 Mät genom att jämföra tidsstämpeln för merge-committen mot tidsstämplarna i
 Actions-loggen och i Render → Events.
