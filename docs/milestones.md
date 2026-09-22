@@ -17,3 +17,22 @@
 [x] README Getting started omskriven: ett sätt med Docker, ett utan – och npm start-felet borta (skulden från M0)
 
 [x] Logg i docs/log.md: en post per arbetsdag, inklusive vem som gjorde vad. Ny tech lead presenterad i loggen
+
+# M4
+
+[x] Nyckeln ut ur koden: ingen API-nyckel i src/ och inga hemligheter i VITE_-variabler. Appen anropar /api relativt, och nginx lägger på X-Api-Key från miljön (nginx.conf.template)
+
+[x] Den gamla nyckeln är död – och ni har bevisat det: curl mot test-API:t med nyckeln från api.js ger 401, och utskriften står i docs/deploy.md. Teamets nya nyckel finns bara i Render
+
+[x] Lokalt fungerar som förut: .env.example i repot, .env i .gitignore och .dockerignore. Från en ren klon: cp .env.example .env + docker compose up --build → man kan logga in
+
+[x] Bygg en gång: pipelinen bygger imagen en gång per commit och pushar den till GHCR taggad med commitens sha – bara från main, aldrig från en PR
+
+[x] Automatisk deploy till staging: merge till main deployar till Render via deploy hook. Hooken ligger som secret i GitHub-miljön staging, adressen som variable. Ingen klickar i Render för att släppa en version
+
+[x] Verifierad deploy: deploy-jobbet väntar tills /version.txt visar commitens sha och gör sedan ett röktest mot /api – jobbet blir rött om något av dem misslyckas
+
+[x] Miljökonfig via variabler: API_URL och API_KEY sätts i Render, inte i imagen. Samma image kör lokalt i compose
+docs/deploy.md enligt mallen från workshopen (flöde, miljöer, var varje variabel bor, nyckeln, rollback, uppmätta tider, kända begränsningar) + beslutsdokument docs/decisions/hosting.md med minst tre jämförda alternativ
+
+[x] README med staging-adressen och Kom igång som börjar med cp .env.example .env · logg i docs/log.md, en post per arbetsdag, med vem som gjorde vad
