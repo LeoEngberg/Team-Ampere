@@ -6,6 +6,13 @@
 
 Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
 
+## Staging-adress
+
+https://kraftly-api-staging.onrender.com/
+
+Komma igång som börjar med:
+cp .env.example .env
+
 ## Getting started
 
 Hur du kommer igång med docker:
