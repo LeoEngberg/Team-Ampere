@@ -311,13 +311,19 @@ Pipeline är rött. Det var något problemet med API kanske
 
 **Vad har jag gjort idag?**
 
+Försökte lösa ett fel med staging tillsammans med Rabbiya
+
+**Vad var svårt**
+
+Vi fick rött och hade svårt att hitta problemet
+
 # 2026-09-22
 
 ### Jia
 
 **Vad har jag gjort idag?**
 
-Fixt daliy-log, milestones.md och Readme.md
+Fixat milestones.md och Readme.md
 
 ### Rabbiya
 
@@ -330,3 +336,5 @@ Decisions/hosting.md
 ### Leo
 
 **Vad har jag gjort idag?**
+
+Skrivit daily log.
