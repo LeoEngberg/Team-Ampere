@@ -55,8 +55,8 @@ vi ska ha en blameless work kultur, vi kommer att fokusera på fixa problemet
 
 ## Mötestider
 
-Tisdag – på plats kl. 10:00
-Fredag – på distans kl. 09:30
+Tisdag – på distans kl. 10:00
+Fredag – på distans kl. 10:00
 Vi lägger till fler mötestider vid behov.
 
 ## Definition of done för PR:er
