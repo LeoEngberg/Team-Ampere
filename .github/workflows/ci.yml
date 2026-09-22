@@ -145,6 +145,27 @@ jobs:
           URL: ${{ vars.STAGING_URL }}
         run: |
           URL="${URL%/}"
-          curl -fsS -X POST "$URL/api/login" -H 'Content-Type: application/json' -d '{"email":"a@b.se","password":"x"}'
-          echo
-          echo "✅ /api svarar via nginx med nyckeln från Render"
+
+          for i in $(seq 1 10); do
+            if curl -fsS -X POST "$URL/api/login" \
+              -H 'Content-Type: application/json' \
+              -d '{"email":"a@b.se","password":"x"}'; then
+              echo
+              echo "✅ /api svarar via nginx med nyckeln från Render"
+              exit 0
+            fi
+
+            echo "Röktest misslyckades ($i/10), väntar 10 s"
+            sleep 10
+          done
+
+          echo "::error::Röktestet mot staging misslyckades efter 100 sekunder"
+          exit 1
+      # - name: Röktest – går inloggningen genom proxyn?
+      #   env:
+      #     URL: ${{ vars.STAGING_URL }}
+      #   run: |
+      #     URL="${URL%/}"
+      #     curl -fsS -X POST "$URL/api/login" -H 'Content-Type: application/json' -d '{"email":"a@b.se","password":"x"}'
+      #     echo
+      #     echo "✅ /api svarar via nginx med nyckeln från Render"
