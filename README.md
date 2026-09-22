@@ -6,6 +6,13 @@
 
 Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
 
+## Staging-adress
+
+https://kraftly-api-staging.onrender.com/
+
+Komma igång som börjar med:
+cp .env.example .env
+
 ## Getting started
 
 Hur du kommer igång med docker:
@@ -48,8 +55,8 @@ vi ska ha en blameless work kultur, vi kommer att fokusera på fixa problemet
 
 ## Mötestider
 
-Tisdag – på plats kl. 10:00
-Fredag – på distans kl. 09:30
+Tisdag – på distans kl. 10:00
+Fredag – på distans kl. 10:00
 Vi lägger till fler mötestider vid behov.
 
 ## Definition of done för PR:er

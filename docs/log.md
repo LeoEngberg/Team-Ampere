@@ -154,7 +154,7 @@ Inga större hinder idag. Jag behöver fortfarande öva mer på CI, GitHub Actio
 
 Sjukledighet
 
-# 2026-09-04 Fredag
+# 2026-09-04
 
 ### Jia, Rabbiya, Leo
 
@@ -172,7 +172,7 @@ Vi försökte att testa fel i pipeline genom att skriva några syntaxfel men de 
 
 **Fel:** Det var en formatting fel. Några extra tom rad.
 
-# 2026-09-07 Månadag
+# 2026-09-07
 
 ## New Tech Lead: Rabbiya
 
@@ -190,7 +190,7 @@ vecka 3-9: **Rabbiya**
 
 3. Vi har även diskuterat om protokoll om main ska vara rött. Tech Lead ska ansvaras för kolla att main är grön efter merge inom 30 minuter. Om Tech Lead är inte tillgängligt då den person som ska merga vara ansvar för den.
 
-# 2026-09-11 Fredag
+# 2026-09-11
 
 ### Jia
 
@@ -244,3 +244,89 @@ Jag skapade en temporär mapp där jag klonade repot för att testa docker compo
 **Vad var svårt?**
 
 Ingenting egentligen, allt flöt på som det skulle.
+
+# 2026-09-17
+
+### Jia
+
+**Vad har jag gjort idag?**
+
+Arbetade med M4-uppgiften Spår 1 om att flytta API-nyckeln från frontendkoden.
+Uppdaterade src/services/api.js så att API-nyckeln inte längre ligger direkt i frontendkoden.
+Lade till miljövariabler via .env och .env.example.
+Uppdaterade .gitignore och .dockerignore så att .env inte committas eller kopieras till Docker-builden.
+Uppdaterade mock-api/server.js så att API:t kräver en giltig X-Api-Key.
+Lade till stöd för PORT från miljön.
+Uppdaterade nginx.conf till en template där API_URL, API_KEY och PORT sätts när containern startar.
+Uppdaterade Docker-konfigurationen och testade docker compose up --build.
+Felsökte E2E-testerna i GitHub Actions. Build och image gick igenom, men E2E behövde justeras eftersom /api/user nu kräver API-nyckel.
+Ändrade Playwrights health check till /healthz och identifierade att mock-API:t behöver en /healthz endpoint.
+
+**Vad var svårt?**
+
+Docker-builden för mock-API:t misslyckades eftersom Husky kördes under npm ci --omit=dev.
+Löste detta genom att använda --ignore-scripts.
+E2E-testet fick senare timeout eftersom /healthz saknades i mock-API:t.
+
+### Rabbiya
+
+**Vad har jag gjort idag?**
+
+Skapade en ny fork,
+ändrade Rulesets (lägg till Image → GHCR)
+i concurrency ändrade cancel-in-progress: true till cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+Lägg workflow_dispatch:under on:
+ersätt jobb image med 2 två jobb publish och deploy-staging
+mergat branchen M4 pipeline till main
+
+**vad var svårt**
+
+Pipeline är rött. Jag tror att det kommer att vara grön efter spår 3 är klart
+
+### Leo
+
+**Vad har jag gjort idag?**
+
+Självstudier
+
+# 2026-09-21
+
+### Jia
+
+**Vad har jag gjort idag?**
+
+Självstudier
+
+### Rabbiya
+
+**Vad har jag gjort idag?**
+
+försökte att fixa fel vid staging tillsammans med Leo
+
+**vad var svårt**
+
+Pipeline är rött. Det var något problemet med API kanske
+
+### Leo
+
+**Vad har jag gjort idag?**
+
+# 2026-09-22
+
+### Jia
+
+**Vad har jag gjort idag?**
+
+Fixt daliy-log, milestones.md och Readme.md
+
+### Rabbiya
+
+**Vad har jag gjort idag?**
+
+Skapat en ny branch och skapade dokument filer
+Deploy.md
+Decisions/hosting.md
+
+### Leo
+
+**Vad har jag gjort idag?**
