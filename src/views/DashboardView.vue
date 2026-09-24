@@ -9,10 +9,12 @@
         <div class="stat-label">Förbrukning senaste månaden</div>
         <div class="stat-value">{{ latestMonth }} kWh</div>
       </div>
+
       <div class="card stat">
         <div class="stat-label">Aktuellt pris</div>
         <div class="stat-value">{{ currentPrice }} kr/kWh</div>
       </div>
+
       <div class="card stat">
         <div class="stat-label">Avtal</div>
         <div class="stat-value" style="font-size: 20px">
@@ -31,6 +33,8 @@
       />
       <p class="hint">Källa: din elmätare. Uppdateras varje dygn.</p>
     </div>
+
+    <NorwayNotice />
 
     <div class="card">
       <h2>Spartips just nu</h2>
@@ -52,6 +56,7 @@ import { computed, onMounted, onBeforeUnmount } from "vue";
 import { useUserStore } from "../stores/user";
 import { useConsumptionStore } from "../stores/consumption";
 import ConsumptionChart from "../components/ConsumptionChart.vue";
+import NorwayNotice from "../components/NorwayNotice.vue";
 
 const userStore = useUserStore();
 const consumptionStore = useConsumptionStore();
