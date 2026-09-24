@@ -7,13 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Vilken miljö ska backas?'
+        description: "Vilken miljö ska backas?"
         type: choice
         options: [staging, production]
         default: staging
         required: true
       sha:
-        description: 'Hela commit-sha:n som ska köras (finns som tagg i GHCR)'
+        description: "Hela commit-sha:n som ska köras (finns som tagg i GHCR)"
         required: true
 
 permissions:

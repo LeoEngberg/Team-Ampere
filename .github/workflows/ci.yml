@@ -159,7 +159,7 @@ jobs:
       name: production
       url: ${{ vars.PROD_URL }}
     concurrency:
-      group: deploy-production   # aldrig två produktionsdeployer samtidigt – den andra väntar på att den första blir klar
+      group: deploy-production # aldrig två produktionsdeployer samtidigt – den andra väntar på att den första blir klar
       cancel-in-progress: false
     steps:
       - name: Be Render köra exakt den här imagen i produktion
