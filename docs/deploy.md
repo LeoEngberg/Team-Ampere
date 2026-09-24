@@ -18,10 +18,11 @@ i `ci.yml`).
 
 ## Miljöer
 
-| Miljö   | URL                                                           | Image                                                                     | API                                      | Uppdateras                              |
-| ------- | ------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------- | --------------------------------------- |
-| Lokalt  | http://localhost:5173 (dev) / http://localhost:8080 (compose) | Byggs lokalt från `Dockerfile`                                            | Eget mock-API på `localhost:4000`        | Manuellt, `docker compose up --build`   |
-| Staging | `https://team-ampere-staging.onrender.com`                    | `ghcr.io/leoengberg/team-ampere:ba6ba3e1e0ca6397adac3ce2d2424f1973b00bf5` | https://kraftly-api-staging.onrender.com | Automatiskt vid varje merge till `main` |
+| Miljö   | URL                                                           | Image                                | API                                      | Uppdateras                              |
+| ------- | ------------------------------------------------------------- | ------------------------------------ | ---------------------------------------- | --------------------------------------- |
+| Lokalt  | http://localhost:5173 (dev) / http://localhost:8080 (compose) | Byggs lokalt från `Dockerfile`       | Eget mock-API på `localhost:4000`        | Manuellt, `docker compose up --build`   |
+| Staging | `https://team-ampere-staging.onrender.com`                    | `ghcr.io/rabbit-89/team-ampere:main` | https://kraftly-api-staging.onrender.com | Automatiskt vid varje merge till `main` |
+| Prod    | https://kraftly-teamampere.onrender.com                       | ghcr.io/rabbit-89/team-ampere:main   | https://kraftly-api-staging.onrender.com | deployas efter godkännande              |
 
 ## Konfiguration
 

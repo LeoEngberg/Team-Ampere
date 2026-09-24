@@ -6,6 +6,10 @@
 
 Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
 
+## Pod-address
+
+https://kraftly-teamampere.onrender.com
+
 ## Staging-adress
 
 https://kraftly-api-staging.onrender.com/
