@@ -1,10 +1,14 @@
 ## CI-badgen
 
-[![CI](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml/badge.svg)](https://github.com/LeoEngberg/Team-Ampere/actions/workflows/ci.yml)
+[![CI](https://github.com/Rabbit-89/Team-Ampere/actions/workflows/ci.yml/badge.svg)](https://github.com/Rabbit-89/Team-Ampere/actions/workflows/ci.yml)
 
 # kraftly-portal
 
 Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
+
+## Pod-address
+
+https://kraftly-teamampere.onrender.com
 
 ## Staging-adress
 
