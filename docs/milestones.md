@@ -52,3 +52,13 @@ window.__KRAFTLY__ = {
   features: { norway: false }
 }
 ```
+
+# DoD-punkt 5
+
+## Före
+
+![alt text](<Screenshot 2026-09-24 152336.png>)
+
+## Efter
+
+![alt text](<Screenshot 2026-09-24 155741.png>)
