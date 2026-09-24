@@ -36,3 +36,19 @@
 docs/deploy.md enligt mallen från workshopen (flöde, miljöer, var varje variabel bor, nyckeln, rollback, uppmätta tider, kända begränsningar) + beslutsdokument docs/decisions/hosting.md med minst tre jämförda alternativ
 
 [x] README med staging-adressen och Kom igång som börjar med cp .env.example .env · logg i docs/log.md, en post per arbetsdag, med vem som gjorde vad
+
+# DoD-punkt 3
+
+```text
+$ curl https://team-ampere-main.onrender.com/config.js
+window.__KRAFTLY__ = {
+  env: 'lokal',
+  features: { norway: true }
+}
+
+$ curl https://kraftly-teamampere.onrender.com/config.js
+window.__KRAFTLY__ = {
+  env: 'production',
+  features: { norway: false }
+}
+```
